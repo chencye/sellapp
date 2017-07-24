@@ -12,7 +12,6 @@
 # ignore Maven generated target folders
 target
 out
-build
 
 # .gitignore for intellij
 .idea
