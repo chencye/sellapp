@@ -101,6 +101,10 @@ bezier曲线 <cubic-bezier.com>
 禁止事件冒泡
 @click.stop.prevent
 
+router切换
+状态保留keep-alive，请求的数据也会保存，不会重新发起请求
+实现原理，就是将组件状态，保存在内存里
+
 # 经典flex布局
 
 flex 布局 阮一峰
@@ -118,3 +122,27 @@ v-el
 let foodList = this.$els.foodsWrapper.getElementsByClassName('food-list-hook');
 
 $nextTick dom渲染好之后
+
+# js
+
+本地存储
+window.localStorage
+
+解析URL参数urlParse
+
+# express
+
+
+# 链接
+
+<https://github.com/vuejs/vue-router>
+<https://github.com/ustbhuangyi/better-scroll>
+<http://webpack.github.io>
+
+stylus中文文档 <http://www.zhangxinxu.com/jq/stylus/>
+es6入门学习 <http://es6.ruanyifeng.com/>
+eslint规则 <http://eslint.org/docs/rules>
+
+设备像素比 <http://www.zhangxinxu.com/wordpress/2012/08/window-devicepixelratio>
+Flex布局 <http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html?utm_source=tuicool>
+贝塞尔曲线测试(购物车动画) <http://cubic-bezier.com/>

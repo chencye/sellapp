@@ -12,11 +12,12 @@
         <a v-link="{path:'/seller'}">商家</a>
       </div>
     </div>
-    <router-view :seller="seller"></router-view>
+    <router-view :seller="seller" keep-alive></router-view>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
+  import {urlParse} from 'common/js/util';
   import header from 'components/header/header.vue';
 
   const ERR_OK = 0;
@@ -24,14 +25,23 @@
   export default {
     data() {
       return {
-        seller: {}
+        seller: {
+          id: (() => {
+            let queryParam = urlParse();
+            return queryParam.id;
+          })()
+        }
       };
     },
     created() {
-      this.$http.get('/api/seller').then((response) => {
+      this.$http.get('/api/seller?id=' + this.seller.id).then((response) => {
         response = response.body;
         if (response.errno === ERR_OK) {
-          this.seller = response.data;
+          // this.seller = response.data;
+          // 在原来的基础上扩展属性
+          // 为vue推荐的es6写法
+          // 这样子seller.id就不会被丢失了
+          this.seller = Object.assign({}, this.seller, response.data);
         }
       });
     },
